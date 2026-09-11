@@ -218,9 +218,9 @@ constexpr std::uint32_t kCacheVersion = 20;           // 20: the member-macro re
                                                       // 4: Include gained a `bool isAngle` (quote/angle) field
 constexpr std::uint32_t kParserVer    = 91;           // bump on any grammar/.scm/extraction change
                                                       // 91 = 2026-09-11 (Kotlin, PR #126): a 24th grammar joins kLangTable
-                                                      //    (.kt), so the crawl admits files a v88 blob never saw — ABSENT,
+                                                      //    (.kt), so the crawl admits files a v90 blob never saw — ABSENT,
                                                       //    not stale, and only the header version can reject that blob.
-                                                      //    91 and not 89/90: main stood at 88, and #135 reserves 90. Also
+                                                      //    91 and not 89/90: #135 spent both, and main stands at 90. Also
                                                       //    under 91: vendor patch kotlin/002-triple-dollar-escape changes a
                                                       //    real parse (a triple-quoted string ending right after an escaped
                                                       //    `\$`, e.g. """a\$""", lost its first closing quote);
@@ -233,7 +233,7 @@ constexpr std::uint32_t kParserVer    = 91;           // bump on any grammar/.sc
                                                       //    used to abort (the yaml/001 and markdown/001 precedent). A
                                                       //    refused file's cache record is written UNKNOWN with the existing
                                                       //    hash-0 encoding, so record SHAPES are unchanged and kCacheVersion
-                                                      //    stays 18. The bodyless-Kotlin-type and own-JVM-language rules
+                                                      //    stays #135's 20. The bodyless-Kotlin-type and own-JVM-language rules
                                                       //    live in graph.h and are recomputed every run. quality.h's
                                                       //    kIngestParserVerMirror carries the same value (gated). The
                                                       //    branch's two earlier steps, folded in under their branch numbers

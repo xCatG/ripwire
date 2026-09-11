@@ -2058,7 +2058,7 @@ void writeSkippedHeader( rw::XmlWriter& w, const rw::IngestResult& ing, const Sk
 {
     using namespace rw;
     const CrawlSkips& cs = ing.crawlSkips;
-    char hdr[ 768 ];   // fifteen counters, each up to 20 digits, + ignore_mode= — sized well clear of a truncated count
+    char hdr[ 768 ];   // seventeen counters, each up to 20 digits, + ignore_mode= — sized well clear of a truncated count
     // mirror ingest()'s own zero-ceiling clamp so the header states the EFFECTIVE bound, never a raw 0
     const std::size_t effectiveMax = maxFileBytes == 0 ? kDefaultMaxFileBytes : maxFileBytes;
     const bool        rowsCapped   = cs.excluded.size() < cs.excludedFiles || cs.unsupported.size() < cs.unsupportedFiles
